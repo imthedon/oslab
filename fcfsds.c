@@ -11,8 +11,10 @@ void fcfsDiskScheduling(int queue[], int head, int size) {
     for (int i = 0; i < size; i++) {
         int seek_distance = abs(queue[i] - current_track);
         total_seek_time += seek_distance;
-        current_track = queue[i];
         printf("Move from %d to %d, Seek Time = %d\n", current_track - seek_distance, current_track, seek_distance);
+        current_track = queue[i];
+       //printf("Move from %d to %d, Seek Time = %d\n", current_track - seek_distance, current_track, seek_distance);
+       
     }
 
     printf("Total Seek Time: %d\n", total_seek_time);
